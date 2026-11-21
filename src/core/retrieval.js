@@ -15,11 +15,13 @@ const SYNONYMS = {
   trip: ['travel'], vacation: ['travel'], abroad: ['travel'], pill: ['drug'], medication: ['drug', 'prescription'],
   dentist: ['dental'], teeth: ['dental'], eye: ['vision'], deadline: ['deadline', 'within'], refund: ['reimburs'],
 };
+// Keys are stemmed once so "braces" (stem "brac") still finds its synonyms.
+const SYNONYMS_BY_STEM = Object.fromEntries(Object.entries(SYNONYMS).map(([k, v]) => [stem(k), v]));
 export function expandQuery(text) {
   let t = String(text).toLowerCase();
   for (const [re, rep] of PHRASES) t = t.replace(re, rep);
   const base = [...new Set(tokenize(t))];
-  return base.map(term => [term, ...(SYNONYMS[term] || []).map(stem)]);
+  return base.map(term => [term, ...(SYNONYMS_BY_STEM[term] || []).map(stem)]);
 }
 
 // Small suffix-stripping stemmer: "cleanings" -> "clean", "glasses" -> "glass", "reimbursed" -> "reimburs".
