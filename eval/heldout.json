@@ -1,0 +1,11 @@
+[
+  { "q": "What percentage of crowns does the plan reimburse?", "section": "dental-care", "mustInclude": ["50%"] },
+  { "q": "Can I claim laser eye surgery?", "section": "vision-care", "mustInclude": ["$250"] },
+  { "q": "What is the deductible on prescriptions?", "section": "prescription-drugs", "mustInclude": ["$5"] },
+  { "q": "If I break my leg in an accident, is there a waiting period before disability pay starts?", "section": "short-term-disability", "mustInclude": ["no waiting period"] },
+  { "q": "Which parent's plan pays first for our children?", "section": "coordination-of-benefits", "mustInclude": ["birthday"] },
+  { "q": "How do I change my life insurance beneficiary?", "section": "life-insurance", "mustInclude": ["HR portal"] },
+  { "q": "What is the maximum for psychologist visits?", "section": "paramedical-services", "mustInclude": ["$1,500"] },
+  { "q": "Is gym membership reimbursed?", "answerable": false },
+  { "q": "Who is the CEO of Maplewood?", "answerable": false }
+]

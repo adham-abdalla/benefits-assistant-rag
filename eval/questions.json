@@ -1,0 +1,23 @@
+[
+  { "q": "How much does the plan pay for a dental cleaning?", "section": "dental-care", "mustInclude": ["80%"] },
+  { "q": "Are braces or orthodontics covered?", "section": "dental-care", "mustInclude": ["not covered"] },
+  { "q": "What is the yearly maximum for dental?", "section": "dental-care", "mustInclude": ["$1,500"] },
+  { "q": "How much can I get for new glasses?", "section": "vision-care", "mustInclude": ["$250"] },
+  { "q": "How often can my child get an eye exam?", "section": "vision-care", "mustInclude": ["12 months"] },
+  { "q": "Is massage therapy covered and what is the limit?", "section": "paramedical-services", "mustInclude": ["$500"] },
+  { "q": "Do I need a doctor's referral for physiotherapy?", "section": "paramedical-services", "mustInclude": ["not required"] },
+  { "q": "Until what age are my kids covered if they are in university?", "section": "enrolling-dependents", "mustInclude": ["25"] },
+  { "q": "How long do I have to submit a claim?", "section": "claim-deadlines", "mustInclude": ["12 months"] },
+  { "q": "How fast are online claims paid?", "section": "submitting-a-claim", "mustInclude": ["5 business days"] },
+  { "q": "What happens if I pick a brand-name drug instead of the generic?", "section": "prescription-drugs", "mustInclude": ["difference"] },
+  { "q": "How much life insurance do I get?", "section": "life-insurance", "mustInclude": ["two times"] },
+  { "q": "How long is the waiting period for short-term disability?", "section": "short-term-disability", "mustInclude": ["7-day"] },
+  { "q": "Is counselling free?", "section": "employee-and-family-assistance-program", "mustInclude": ["free"] },
+  { "q": "My spouse has their own plan. Where do I send my claims first?", "section": "coordination-of-benefits", "mustInclude": ["your own plan"] },
+  { "q": "Does my health spending account balance roll over?", "section": "health-spending-account", "mustInclude": ["carry forward"] },
+  { "q": "Am I covered for medical emergencies on a trip to Florida?", "section": "travel-emergency-coverage", "mustInclude": ["$5,000,000"] },
+  { "q": "When can I join the plan as a new employee?", "section": "eligibility", "mustInclude": ["3 months"] },
+  { "q": "Does the plan cover my pet's vet bills?", "answerable": false },
+  { "q": "What is the company's parental leave top-up policy?", "answerable": false },
+  { "q": "Can I expense my home internet?", "answerable": false }
+]

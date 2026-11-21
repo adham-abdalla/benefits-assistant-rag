@@ -1,0 +1,17 @@
+{
+  "name": "benefits-assistant-rag",
+  "version": "1.0.0",
+  "description": "Retrieval-augmented benefits assistant: cited structured answers, grounding gate, decision log, evaluation suite, Express REST API and LLM adapters.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test",
+    "eval": "node eval/run.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}

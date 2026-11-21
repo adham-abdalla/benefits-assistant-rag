@@ -1,0 +1,20 @@
+{
+  "provider": "offline",
+  "model": "extractive-v1",
+  "development": {
+    "questions": 21,
+    "retrievalHitAt3": 100,
+    "citationAccuracy": 100,
+    "factCoverage": 100,
+    "correctRefusals": 100,
+    "passRate": 100
+  },
+  "heldout": {
+    "questions": 9,
+    "retrievalHitAt3": 85.7,
+    "citationAccuracy": 85.7,
+    "factCoverage": 71.4,
+    "correctRefusals": 100,
+    "passRate": 77.8
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benefits Assistant – RAG demo</title>
+  <meta name="description" content="Retrieval-augmented assistant that answers benefits questions with citations, refuses when unsure, and logs every decision.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230b5d4f%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2717%27 font-family=%27Arial%27 font-weight=%27700%27 fill=%27white%27 text-anchor=%27middle%27%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="web/styles.css">
+</head>
+<body>
+  <header class="top">
+    <strong>Benefits Assistant</strong>
+    <span class="muted">RAG demo · answers only from the sample booklet, with citations</span>
+  </header>
+  <main>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="ask">Ask</button>
+      <button role="tab" aria-selected="false" data-tab="log">Decision log</button>
+      <button role="tab" aria-selected="false" data-tab="eval">Evaluation</button>
+      <button role="tab" aria-selected="false" data-tab="settings">Model</button>
+    </div>
+
+    <section id="tab-ask">
+      <form id="ask-form">
+        <label for="q">Ask about the Maplewood benefits plan</label>
+        <div class="row"><input id="q" maxlength="500" autocomplete="off" placeholder="e.g. How much do I get for new glasses?"><button class="primary">Ask</button></div>
+      </form>
+      <div class="chips" id="examples"></div>
+      <div id="answer" aria-live="polite"></div>
+    </section>
+
+    <section id="tab-log" hidden>
+      <p class="muted">Every answer is logged with the retrieved sections, scores, provider, attempts, validation notes, token estimate and latency, so automated outputs can be traced and reviewed.</p>
+      <div id="log"></div>
+    </section>
+
+    <section id="tab-eval" hidden>
+      <p class="muted">Runs the evaluation sets in your browser with the current model. The held-out set was written after tuning and never used to change the rules.</p>
+      <button class="primary" id="run-eval">Run evaluation</button>
+      <div id="eval"></div>
+    </section>
+
+    <section id="tab-settings" hidden>
+      <p><strong>Offline mode</strong> (default) picks the best-matching sentences from the retrieved sections: free, instant and deterministic.</p>
+      <p>To try a real LLM, paste an Anthropic API key. It is kept in memory only (never stored or sent anywhere except api.anthropic.com) and cleared when you close the tab. In production the key stays on the server (see <code>server/</code>).</p>
+      <div class="row"><input id="key" type="password" placeholder="sk-ant-…" autocomplete="off" aria-label="Anthropic API key"><button id="use-key">Use Claude</button><button id="use-offline">Use offline</button></div>
+      <p id="provider-status" class="muted"></p>
+    </section>
+  </main>
+  <footer class="muted">Sample booklet is fictional. Built by Adham Abdalla · <a href="https://github.com/adham-abdalla/benefits-assistant-rag">source on GitHub</a></footer>
+  <script type="module" src="web/app.js"></script>
+</body>
+</html>
